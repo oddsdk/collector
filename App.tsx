@@ -1,20 +1,19 @@
+import './src/importPolyfills'
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import PolyfillCrypto from 'react-native-webview-crypto';
+
+import ImageGallery from './src/components/gallery/ImageGallery';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <View className="flex items-center justify-center bg-white p-8">
+        <Text>Open up App.tsx tooooooo start working on your app!</Text>
+        <StatusBar style="auto" />
+      </View>
+      <PolyfillCrypto />
+      <ImageGallery />
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
