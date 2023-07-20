@@ -5,7 +5,7 @@ import tweetnacl from 'tweetnacl';
 import * as keystore from 'keystore-idb';
 // import * as keystoreIDB from 'keystore-idb/constants.js';
 // import { HashAlg, SymmAlg, SymmKeyLength } from 'keystore-idb/types.js';
-// import { RSAKeyStore } from 'keystore-idb/rsa/index.js';
+import { RSAKeyStore } from 'keystore-idb/rsa/index.js';
 // import rsaOperations from 'keystore-idb/rsa/index.js';
 
 import * as typeChecks from '../../common/type-checks';
