@@ -1,4 +1,5 @@
 
+require("node-libs-expo/globals");
 import { polyfillWebCrypto } from "expo-standard-web-crypto";
 polyfillWebCrypto();
 
