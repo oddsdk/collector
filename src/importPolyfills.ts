@@ -1,21 +1,28 @@
-
 require("node-libs-expo/globals");
-import { polyfillWebCrypto } from "expo-standard-web-crypto";
+const { polyfillWebCrypto } = require("expo-standard-web-crypto");
+const TextEncodingPolyfill = require("text-encoding");
+import { Worker } from "react-native-workers";
+import * as WebAssembly from "react-native-webassembly";
+
 polyfillWebCrypto();
 
-const TextEncodingPolyfill = require("text-encoding");
+global.Worker = Worker;
+
+global.WebAssembly = WebAssembly;
+
+// if (!global.WebAssembly) {
+//   global.WebAssembly = require("webassemblyjs");
+// }
 
 Object.assign(global, {
   TextEncoder: TextEncodingPolyfill.TextEncoder,
   TextDecoder: TextEncodingPolyfill.TextDecoder,
 });
 
-class FinalizationRegistry {
-  constructor(fn: () => void) {
-    fn();
-  }
-}
-
 Object.assign(global, {
-  FinalizationRegistry: FinalizationRegistry,
+  FinalizationRegistry: class FinalizationRegistry {
+    constructor(fn: () => void) {
+      fn();
+    }
+  },
 });

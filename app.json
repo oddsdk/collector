@@ -15,7 +15,9 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {},
+      "bundleIdentifier": "com.fission.collector"
     },
     "android": {
       "adaptiveIcon": {
@@ -23,10 +25,14 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.fission.collector",
-      "versionCode": 1
+      "versionCode": 1,
+      "permissions": []
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "react-native-webassembly"
+    ]
   }
 }

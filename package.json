@@ -4,15 +4,17 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web"
   },
   "dependencies": {
+    "@creditkarma/async-hooks": "^0.0.8",
     "@oddjs/odd": "github:oddsdk/ts-odd#next",
-    "@react-native-async-storage/async-storage": "^1.19.0",
+    "bthreads": "^0.5.1",
     "crypto-browserify": "^3.12.0",
-    "expo": "~49.0.3",
+    "diagnostics_channel": "^1.1.0",
+    "expo": "~49.0.8",
     "expo-clipboard": "~4.3.0",
     "expo-constants": "~14.4.2",
     "expo-crypto": "~12.4.1",
@@ -20,28 +22,36 @@
     "expo-dev-client": "^2.4.6",
     "expo-image-picker": "~14.3.1",
     "expo-secure-store": "~12.3.1",
+    "expo-sharing": "~11.5.0",
     "expo-standard-web-crypto": "^1.6.0",
     "expo-status-bar": "~1.6.0",
     "keystore-idb": "github:fission-codes/keystore-idb#avivash/temp-hardcoded-localforage-mobile-driver",
     "nativewind": "^2.0.11",
-    "node-fetch": "^3.3.2",
+    "net-websocket-polyfill": "^0.1.1-r3",
     "node-forge": "^1.3.1",
     "node-libs-expo": "^0.0.3",
     "react": "18.2.0",
-    "react-native": "0.72.3",
+    "react-native": "0.72.4",
     "react-native-biometrics": "^3.0.1",
     "react-native-crypto": "^2.2.0",
+    "react-native-fetch-polyfill": "^1.1.3",
     "react-native-file-access": "^3.0.3",
+    "react-native-webassembly": "^0.3.3",
     "react-native-webview": "^13.2.2",
     "react-native-webview-crypto": "^0.0.25",
+    "react-native-workers": "^0.3.1",
     "readable-stream": "^4.4.2",
     "recoil": "^0.7.7",
     "recoil-nexus": "^0.5.0",
     "text-encoding": "^0.7.0",
-    "uint8arrays": "^3.0.0"
+    "uint8arrays": "^3.0.0",
+    "webassemblyjs": "^1.11.6",
+    "expo-splash-screen": "~0.20.5",
+    "expo-system-ui": "~2.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.22.5",
     "@babel/plugin-transform-private-methods": "^7.22.5",
     "@types/node": "^20.5.0",
     "@types/react": "~18.2.14",
@@ -51,5 +61,8 @@
     "tailwindcss": "3.3.2",
     "typescript": "^5.1.3"
   },
-  "private": true
+  "private": true,
+  "browser": {
+    "native-fetch": "./node_modules/react-native-fetch-polyfill"
+  }
 }

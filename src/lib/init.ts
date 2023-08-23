@@ -1,7 +1,6 @@
 import * as odd from "@oddjs/odd";
 import * as fission from "@oddjs/odd/compositions/fission";
 import { getRecoil, setRecoil } from "recoil-nexus";
-
 import { sessionStore, filesystemStore } from "./stores";
 import { SESSION_ERROR } from "./session";
 import { getBackupStatus, type BackupStatus } from "./auth/backup";
