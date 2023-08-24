@@ -5,10 +5,7 @@ const path = require("path");
 
 nodeLibsExpo.net = `${__dirname}/node_modules/node-libs-expo/mock/net.js`;
 nodeLibsExpo.tls = `${__dirname}/node_modules/node-forge/lib/tls.js`;
-// console.log("nodeLibsExpo", nodeLibsExpo);
-console.log("defaultResolver", defaultResolver);
-const crypto = require.resolve("expo-crypto");
-console.log("crypto", crypto);
+
 exports.resolver = {
   ...defaultResolver,
   assetExts: [...defaultResolver.assetExts, "wasm"],
@@ -25,11 +22,11 @@ exports.resolver = {
     ...nodeLibsExpo,
     async_hooks: require.resolve("@creditkarma/async-hooks"),
     "native-fetch": require.resolve("react-native-fetch-polyfill"),
-    stream: path.resolve(__dirname, "./node_modules/readable-stream"),
+    // stream: path.resolve(__dirname, "./node_modules/readable-stream"),
     "stream/web": require.resolve(
       `${__dirname}/src/lib/polyfills/stream/web/index.ts`
     ),
-    ...require("expo-crypto-polyfills"),
+    // ...require("expo-crypto-polyfills"),
     // crypto: require.resolve("expo-crypto"),
   },
   fallback: {
@@ -46,10 +43,7 @@ exports.resolver = {
     net: require.resolve("net-websocket-polyfill"),
     diagnostics_channel: require.resolve("diagnostics_channel"),
     worker_threads: require.resolve("bthreads"),
-    ...require("expo-crypto-polyfills"),
-    crypto: require.resolve("expo-crypto"),
+    // ...require("expo-crypto-polyfills"),
+    // crypto: require.resolve("expo-crypto"),
   },
-  // transform: {
-  //   experimentalImportSupport: true,
-  // },
 };

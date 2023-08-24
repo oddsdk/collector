@@ -14,7 +14,7 @@ module.exports = function(api) {
         "babel-plugin-rewrite-require",
         {
           aliases: {
-            crypto: "expo-crypto",
+            // crypto: "expo-crypto",
           },
         },
       ],
